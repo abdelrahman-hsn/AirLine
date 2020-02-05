@@ -15,4 +15,17 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+import "bootstrap";
+import "@fortawesome/fontawesome-free/js/all";
 import '../stylesheets/application'
+import "./custom";
+
+const webpack = require('webpack')
+environment.plugins.append(
+  'Provide',
+  new webpack.ProvidePlugin({
+    $: 'jquery',
+    jQuery: 'jquery',
+    Popper: ['popper.js', 'default']
+  })
+)
